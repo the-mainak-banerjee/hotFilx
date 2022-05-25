@@ -36,7 +36,7 @@ export default function Hero() {
     <section className='text-white w-full h-[550px]'>
       <div className='w-full h-full'>
         <div className='absolute w-full h-[550px] bg-gradient-to-r from-black p-2'></div>
-        <img src={`https://image.tmdb.org/t/p/w500/${movie?.backdrop_path}`} alt={movie?.original_title} className='w-full h-full md:object-cover rounded-sm border-2'/>
+        <img src={`https://image.tmdb.org/t/p/w500/${movie?.backdrop_path}`} alt={movie?.original_title} className='w-full h-full object-cover rounded-sm border-2'/>
       </div>
       <div className='absolute w-full top-[20%] p-5 md:p-16'>
           <h1 className='font-bold text-2xl'>{movie?.title}</h1>
