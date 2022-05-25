@@ -12,20 +12,20 @@ function Navbar() {
             </Link>
             <div className="flex items-center text-gray-300">
                 <div className='mr-4'>
-                    <input type="search" placeholder='Search' autoComplete="off" className="bg-inherit border-0 border-b-2 pl-1 focus:w-[250px] focus:border-0"/>
+                    <input type="search" placeholder='Search' autoComplete="off" className="bg-inherit border-0 border-b-2 pl-1 focus:w-[250px]"/>
                     <AiOutlineSearch className="absolute top-7 right-[345px]"/>
                 </div>
-                <Link to='/' className="mr-4">
+                <Link to='/' className="mr-4 hover:underline hover:text-white">
                     <h4>TV</h4>
                 </Link>
-                <Link to='/' className="mr-4">
+                <Link to='/' className="mr-4 hover:underline hover:text-white">
                     <h4>Movies</h4>
                 </Link>
-                <Link to='/' className="mr-4">
+                <Link to='/' className="mr-4 hover:underline hover:text-white">
                     <h4>LogIn</h4>
                 </Link>
                 <Link to='/' className="mr-4">
-                    <button className='bg-[#1f80e0] px-5 py-1 rounded text-white font-bold'>SignUp</button>
+                    <button className='bg-[#1f80e0] px-5 py-1 rounded text-white font-bold hover:bg-white hover:text-black'>SignUp</button>
                 </Link>
             </div>
         </nav>
@@ -35,7 +35,7 @@ function Navbar() {
                 <div className='flex items-center'> 
                     <h2 className="font-semibold text-2xl mr-5">HotFlix</h2>
                     <Link to='/' className="mr-4">
-                        <button className='bg-[#1f80e0] px-5 py-1 rounded text-white font-bold'>SignUp</button>
+                        <button className='bg-[#1f80e0] px-5 py-1 rounded text-white font-bold '>SignUp</button>
                     </Link>
                 </div>
                 <AiOutlineSearch />
