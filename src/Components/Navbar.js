@@ -6,14 +6,14 @@ import { MdPersonalVideo, MdOutlineMovie } from 'react-icons/md'
 function Navbar() {
   return (
     <>
-       <nav className="hidden md:flex text-white items-center justify-between h-16 py-12 px-16 mt-[6px]">
-            <Link to='/'>
-                <h2 className="font-semibold text-2xl">HotFlix</h2>
+       <nav className="hidden md:flex text-white items-center justify-between h-16 py-5 px-16 mt-[4px] z-100 w-full">
+            <Link to='/home'>
+                <h2 className="font-semibold text-3xl">HotFlix</h2>
             </Link>
             <div className="flex items-center text-gray-300">
                 <div className='mr-4'>
-                    <input type="search" placeholder='Search' autocomplete="off" className="bg-inherit border-0 border-b-2 pl-1 focus:w-[250px] focus:border-0"/>
-                    <AiOutlineSearch className="absolute top-12 right-[345px]"/>
+                    <input type="search" placeholder='Search' autoComplete="off" className="bg-inherit border-0 border-b-2 pl-1 focus:w-[250px] focus:border-0"/>
+                    <AiOutlineSearch className="absolute top-7 right-[345px]"/>
                 </div>
                 <Link to='/' className="mr-4">
                     <h4>TV</h4>
@@ -31,7 +31,7 @@ function Navbar() {
         </nav>
 
         <nav className='md:hidden'>
-            <div className="flex text-white items-center justify-between h-16 p-5 mt-[6px] ">  
+            <div className="flex text-white items-center justify-between h-16 p-5 mt-[6px] z-100 w-full">  
                 <div className='flex items-center'> 
                     <h2 className="font-semibold text-2xl mr-5">HotFlix</h2>
                     <Link to='/' className="mr-4">
@@ -40,20 +40,20 @@ function Navbar() {
                 </div>
                 <AiOutlineSearch />
             </div>
-            <div className='bg-[#0C111B] text-white flex items-center z-10 pt-1 fixed bottom-[10px] w-[100%]'>
-                <Link to='/' className="mx-10 flex-col">
+            <div className='bg-[#0C111B] text-white flex items-center justify-center z-10 pt-1 fixed bottom-[10px] w-[100%]'>
+                <Link to='/home' className="mr-12 flex-col">
                     <AiOutlineHome className='ml-[13px]'/>
                     <h4>Home</h4>
                 </Link>
-                <Link to='/' className="mr-10 flex-col">
+                <Link to='/' className="mr-12 flex-col">
                     <MdPersonalVideo className='ml-[2px]'/>
                     <h4>TV</h4>
                 </Link>
-                <Link to='/' className="mr-10 flex-col">
+                <Link to='/' className="mr-12 flex-col">
                     <MdOutlineMovie className='ml-[15px]'/>
                     <h4>Movies</h4>
                 </Link>
-                <Link to='/' className="mr-4 flex-col">
+                <Link to='/' className="flex-col">
                     <AiOutlineUser className='ml-[12px]'/>
                     <h4>LogIn</h4>
                 </Link>
