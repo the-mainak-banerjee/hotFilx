@@ -6,7 +6,7 @@ import { MdPersonalVideo, MdOutlineMovie } from 'react-icons/md'
 function Navbar() {
   return (
     <>
-       <nav className="hidden md:flex text-white items-center justify-between h-16 py-5 px-16 mt-[4px] z-100 w-full">
+       <nav className="hidden md:flex text-white items-center justify-between h-16 py-5 px-16 mt-[4px] z-100 w-full sticky top-0 z-50 bg-[#0C111B]">
             <Link to='/home'>
                 <h2 className="font-semibold text-3xl">HotFlix</h2>
             </Link>
@@ -31,7 +31,7 @@ function Navbar() {
         </nav>
 
         <nav className='md:hidden'>
-            <div className="flex text-white items-center justify-between h-16 p-5 mt-[6px] z-100 w-full">  
+            <div className="flex text-white items-center justify-between h-16 p-5  z-50 w-full fixed top-0 bg-[#0C111B]">  
                 <div className='flex items-center'> 
                     <h2 className="font-semibold text-2xl mr-5">HotFlix</h2>
                     <Link to='/' className="mr-4">
@@ -40,7 +40,7 @@ function Navbar() {
                 </div>
                 <AiOutlineSearch />
             </div>
-            <div className='bg-[#0C111B] text-white flex items-center justify-center z-10 pt-1 fixed bottom-[10px] w-[100%]'>
+            <div className='bg-[#0C111B] text-white flex items-center justify-center z-50 pt-1 fixed bottom-[1px] w-[100%]'>
                 <Link to='/home' className="mr-12 flex-col">
                     <AiOutlineHome className='ml-[13px]'/>
                     <h4>Home</h4>

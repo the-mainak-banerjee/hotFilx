@@ -31,7 +31,7 @@ export default function Hero() {
     }
     
   return (
-    <section className='text-white w-full h-[600px]'>
+    <section className='text-white w-full h-[600px] relative'>
       <div className='w-full h-full'>
         <div className='absolute w-full h-[600px] bg-gradient-to-r from-black p-2'></div>
         <img src={`https://image.tmdb.org/t/p/original/${movies?.backdrop_path}`} alt={movies?.original_title} className='w-full h-full object-cover rounded-sm border-2'/>
