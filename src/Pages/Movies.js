@@ -6,7 +6,9 @@ import requests from '../Resources/Requests'
 function Movies() {
   return (
     <>
-        <Hero />
+        <Hero 
+            apiUrl={requests.popularMovies}
+        />
         <List
             rowId='1'
             title={'Trending Movies'}

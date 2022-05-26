@@ -15,7 +15,7 @@ function Navbar() {
                     <input type="search" placeholder='Search' autoComplete="off" className="bg-inherit border-0 border-b-2 pl-1 focus:w-[250px]"/>
                     <AiOutlineSearch className="absolute top-7 right-[345px]"/>
                 </div>
-                <Link to='/' className="mr-4 hover:underline hover:text-white">
+                <Link to='/tv' className="mr-4 hover:underline hover:text-white">
                     <h4>TV</h4>
                 </Link>
                 <Link to='/movies' className="mr-4 hover:underline hover:text-white">
@@ -45,7 +45,7 @@ function Navbar() {
                     <AiOutlineHome className='ml-[13px]'/>
                     <h4>Home</h4>
                 </Link>
-                <Link to='/' className="mr-12 flex-col">
+                <Link to='/tv' className="mr-12 flex-col">
                     <MdPersonalVideo className='ml-[2px]'/>
                     <h4>TV</h4>
                 </Link>
