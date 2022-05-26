@@ -18,7 +18,7 @@ function Navbar() {
                 <Link to='/' className="mr-4 hover:underline hover:text-white">
                     <h4>TV</h4>
                 </Link>
-                <Link to='/' className="mr-4 hover:underline hover:text-white">
+                <Link to='/movies' className="mr-4 hover:underline hover:text-white">
                     <h4>Movies</h4>
                 </Link>
                 <Link to='/' className="mr-4 hover:underline hover:text-white">
@@ -49,7 +49,7 @@ function Navbar() {
                     <MdPersonalVideo className='ml-[2px]'/>
                     <h4>TV</h4>
                 </Link>
-                <Link to='/' className="mr-12 flex-col">
+                <Link to='/movies' className="mr-12 flex-col">
                     <MdOutlineMovie className='ml-[15px]'/>
                     <h4>Movies</h4>
                 </Link>

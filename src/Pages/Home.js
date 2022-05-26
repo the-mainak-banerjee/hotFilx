@@ -9,12 +9,12 @@ function Home() {
      <Hero />
      <List
        rowId='1'
-       title={'Trending Movie'}
+       title={'Trending Movies'}
        apiUrl={requests.trendingMovies}
      />
      <List
        rowId='2'
-       title={'Popular Movie'}
+       title={'Popular Movies'}
        apiUrl={requests.popularMovies}
      />
      <List
@@ -24,7 +24,7 @@ function Home() {
      />
      <List
        rowId='4'
-       title={'Top Rated Movie'}
+       title={'Top Rated Movies'}
        apiUrl={requests.topRatedMovies}
      />
      <List
@@ -34,10 +34,9 @@ function Home() {
      />
      <List
        rowId='6' 
-       title={'Upcoming Movie'}
+       title={'Upcoming Movies'}
        apiUrl={requests.upcomingMovies}
      />
-
     </>
   )
 }
