@@ -22,7 +22,7 @@ function Shows( {shows}) {
           </p>
           <p 
             className='text-[10px]'>
-            After being involuntarily discharged from the U.S. Special Forces James Harper decides to support his family...
+            {shows?.overview.slice(0,100) + "..."}
           </p>
           <h4 
             className='font-bold text-gray-300 sm:text-[15px] md:text-xl self-center hover:bg-slate-500 py-1 px-3 lg:mt-2 rounded-md'>
