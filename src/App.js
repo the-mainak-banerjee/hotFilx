@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Home from './Pages/Home'
 import LogIn from "./Pages/LogIn";
 import Movies from './Pages/Movies'
@@ -11,6 +11,7 @@ function App() {
     <>
       <AuthContextProvider>
         <Routes>
+          <Route path='/' element={<Navigate  to='/home'/>}/>
           <Route path='/home' element={<Home/>}/>
           <Route path='/movies' element={<Movies />}/>
           <Route path="/tv" element={<TvShows />} />
