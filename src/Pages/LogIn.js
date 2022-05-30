@@ -1,7 +1,27 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../Store/auth-context'
 
 function LogIn() {
+
+    const emailRef = useRef()
+    const passwordRef = useRef()
+    const [err, setErr] = useState('')
+    const { logIn } = useAuth()
+
+
+    async function handleLogin(event) {
+        event.preventDefault()
+
+        try{
+            setErr('')
+            await logIn(emailRef.current.value, passwordRef.current.value)
+        }catch(error){
+            setErr(error.message)
+        }
+    }
+
+
     let backgroundImage = 'https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bcae-07a3f8dc141a/f6d7434e-d6de-4185-a6d4-c77a2d08737b/US-en-20220502-popsignuptwoweeks-perspective_alpha_website_medium.jpg'
     return(
         <section className='w-full h-screen'>
@@ -25,17 +45,20 @@ function LogIn() {
                         <h1 className='text-3xl font-bold'>
                             Log In
                         </h1>
-                        <form className='w-full flex flex-col py-4'>
+                        <form onSubmit={handleLogin} className='w-full flex flex-col py-4'>
+                            {err && <p className='bg-red-500 p-1 mt-1'>{err}</p>}
                             <input
                                 className='p-3 my-2 bg-gray-700 rounded'
                                 type='email'
                                 placeholder='Email'
+                                ref={emailRef}
                                 required
                             />
                             <input
                                 className='p-3 my-2 bg-gray-700 rounded'
                                 type='password'
                                 placeholder='Password'
+                                ref={passwordRef}
                                 required
                             />
                             <button className='bg-[#1f80e0] hover:bg-[#0c549c] py-3 my-6 rounded font-bold'>

@@ -4,17 +4,20 @@ import LogIn from "./Pages/LogIn";
 import Movies from './Pages/Movies'
 import SignUp from "./Pages/SignUp";
 import TvShows from "./Pages/TvShows";
+import { AuthContextProvider } from "./Store/auth-context";
 
 function App() {
   return (
     <>
-      <Routes>
-        <Route path='/home' element={<Home/>}/>
-        <Route path='/movies' element={<Movies />}/>
-        <Route path="/tv" element={<TvShows />} />
-        <Route path='/signup' element={<SignUp/>}/>
-        <Route path='/login' element={<LogIn/>}/>
-      </Routes>
+      <AuthContextProvider>
+        <Routes>
+          <Route path='/home' element={<Home/>}/>
+          <Route path='/movies' element={<Movies />}/>
+          <Route path="/tv" element={<TvShows />} />
+          <Route path='/signup' element={<SignUp/>}/>
+          <Route path='/login' element={<LogIn/>}/>
+        </Routes>
+      </AuthContextProvider>
     </>
   );
 }
