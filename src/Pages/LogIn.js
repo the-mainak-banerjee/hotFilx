@@ -15,8 +15,8 @@ function LogIn() {
                 <Link to='/home'>
                     <h2 className="font-semibold text-3xl">HotFlix</h2>
                 </Link>
-                <Link to='/login'>
-                    <h3 className='text-gray-300 text-xl mr-4 hover:underline hover:text-white'>LogIn</h3>
+                <Link to='/signup'>
+                    <h3 className='text-gray-300 text-xl mr-4 hover:underline hover:text-white'>SignUp</h3>
                 </Link>
             </nav>
             <div className='fixed w-full px-4 py-24 z-50'>
