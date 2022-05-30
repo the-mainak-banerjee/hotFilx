@@ -16,8 +16,6 @@ export default function Hero({ apiUrl }) {
         fetchMovie()
     },[apiUrl])
 
-    console.log(movies)
-
     const trunscateString = (str,length) => {
         if(str?.length > length){
             return str.slice(0,length) + '...'

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../Store/auth-context'
 
 function SignUp() {
@@ -8,6 +8,7 @@ function SignUp() {
     const passwordConfirmRef = useRef()
     const [loading, setLoading] = useState(false)
     const [err,setErr] = useState('')
+    const navigate = useNavigate()
     const { signUp } = useAuth()
     
 
@@ -22,6 +23,7 @@ function SignUp() {
             setErr('')
             setLoading(true)
             await signUp(emailRef.current.value, passwordRef.current.value)
+            navigate('/home')
         }catch(error){
             setErr(error.message)
         }

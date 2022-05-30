@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../Store/auth-context'
 
 function LogIn() {
@@ -7,6 +7,7 @@ function LogIn() {
     const emailRef = useRef()
     const passwordRef = useRef()
     const [err, setErr] = useState('')
+    const navigate = useNavigate()
     const { logIn } = useAuth()
 
 
@@ -16,6 +17,7 @@ function LogIn() {
         try{
             setErr('')
             await logIn(emailRef.current.value, passwordRef.current.value)
+            navigate('/home')
         }catch(error){
             setErr(error.message)
         }
