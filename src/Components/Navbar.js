@@ -21,10 +21,10 @@ function Navbar() {
                 <Link to='/movies' className="mr-4 hover:underline hover:text-white">
                     <h4>Movies</h4>
                 </Link>
-                <Link to='/' className="mr-4 hover:underline hover:text-white">
+                <Link to='/login' className="mr-4 hover:underline hover:text-white">
                     <h4>LogIn</h4>
                 </Link>
-                <Link to='/' className="mr-4">
+                <Link to='/signup' className="mr-4">
                     <button className='bg-[#1f80e0] px-5 py-1 rounded text-white font-bold hover:bg-white hover:text-black'>SignUp</button>
                 </Link>
             </div>
@@ -34,7 +34,7 @@ function Navbar() {
             <div className="flex text-white items-center justify-between h-16 p-5  z-50 w-full fixed top-0 bg-[#0C111B]">  
                 <div className='flex items-center'> 
                     <h2 className="font-semibold text-2xl mr-5">HotFlix</h2>
-                    <Link to='/' className="mr-4">
+                    <Link to='/signup' className="mr-4">
                         <button className='bg-[#1f80e0] px-5 py-1 rounded text-white font-bold '>SignUp</button>
                     </Link>
                 </div>
@@ -53,7 +53,7 @@ function Navbar() {
                     <MdOutlineMovie className='ml-[15px]'/>
                     <h4>Movies</h4>
                 </Link>
-                <Link to='/' className="flex-col">
+                <Link to='/login' className="flex-col">
                     <AiOutlineUser className='ml-[12px]'/>
                     <h4>LogIn</h4>
                 </Link>

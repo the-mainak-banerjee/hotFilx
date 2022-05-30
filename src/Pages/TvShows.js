@@ -1,11 +1,13 @@
 import React from 'react'
 import Hero from '../Components/Hero'
 import List from '../Components/List'
+import Navbar from '../Components/Navbar'
 import requests from '../Resources/Requests'
 
 function TvShows() {
   return (
     <>
+        <Navbar/>
         <Hero 
             apiUrl={requests.popularTVShows}
         />
