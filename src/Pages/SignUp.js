@@ -70,7 +70,7 @@ function SignUp() {
                                 type='password'
                                 placeholder='Password'
                                 ref={passwordRef}
-                                
+                                minLength = '7'
                                 required
                             />
                             <input
@@ -78,7 +78,7 @@ function SignUp() {
                                 type='password'
                                 placeholder='Confirm Password'
                                 ref={passwordConfirmRef}
-                                
+                                minLength ='7'
                                 required
                             />
                             <button disabled={loading} className='bg-[#1f80e0] hover:bg-[#0c549c] py-3 my-6 rounded font-bold'>

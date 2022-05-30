@@ -1,6 +1,49 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useAuth } from '../Store/auth-context'
+import { db } from '../Resources/Firebase'
+import { doc, updateDoc, arrayUnion, onSnapshot } from 'firebase/firestore'
 
 function Shows( {shows}) {
+  const [movies,setMovies] = useState([])
+  const { user } = useAuth();
+
+  const showId = doc(db, 'users', `${user?.email}`)
+
+  async function saveShow (){
+    if(user?.email){
+      await updateDoc(showId, {
+        savedShows: arrayUnion({
+          id: shows.id,
+          title: shows?.title || shows?.name,
+          image: shows?.poster_path
+        })
+      })
+    }
+    else {
+      alert("Please Login To Save Shows")
+    }
+  }
+
+  useEffect(() => {
+    onSnapshot(doc(db, 'users', `${user?.email}`), (doc) => {
+        setMovies(doc.data()?.savedShows)
+    })
+  },[user?.email])
+
+
+  // const showId = doc(db, 'users', `${user?.email}`)
+
+  async function deleteShow(passesId) {
+      try{
+          const newShowList = movies.filter(item => item.id !== passesId)
+          await updateDoc(showId, {
+              savedShows: newShowList
+          })
+      }catch(error){
+          alert(error)
+      }
+  }
+  
   return (
     <div 
         className='text-white w-[150px] sm:w-[200px] md:w-[250px] inline-block cursor-pointer relative hover:scale-110 mr-6'
@@ -25,8 +68,9 @@ function Shows( {shows}) {
             {shows?.overview.slice(0,100) + "..."}
           </p>
           <h4 
-            className='font-bold text-gray-300 sm:text-[15px] md:text-xl self-center hover:bg-slate-500 py-1 px-3 lg:mt-2 rounded-md'>
-            ADD TO WATCHLIST
+            onClick={movies?.some(e=> e.id===shows.id) ? () => deleteShow(shows?.id) : saveShow}
+            className='font-bold text-gray-300 sm:text-[10px] md:text-[15px] self-center hover:bg-slate-500 py-1 px-3 lg:mt-2 rounded-md'>
+            {movies?.some(e=> e.id===shows.id) ? 'Remove From WatchList' : 'Add To WatchList'}
          </h4>
       </div>
     </div>
@@ -36,13 +80,3 @@ function Shows( {shows}) {
 export default Shows
 
 
-// backdrop_path: "/figlwUsXXFehX3IebdjqNLV6vWk.jpg"
-// genre_ids: (2) [28, 53]
-// id: 628900
-// original_language: "en"
-// original_title: "The Contractor"
-// overview: "After being involuntarily discharged from the U.S. Special Forces, James Harper decides to support his family by joining a private contracting organization alongside his best friend and under the command of a fellow veteran. Overseas on a covert mission, Harper must evade those trying to kill him while making his way back home."
-// popularity: 2891.922
-// poster_path: "/rJPGPZ5soaG27MK90oKpioSiJE2.jpg"
-// release_date: "2022-03-10"
-// title: "The Contractor"
