@@ -36,7 +36,7 @@ function Navbar() {
                 </Link>
                 {user?.email ? (
                     <div className='flex items-center'>
-                        <Link to='/login' className="mr-4 hover:underline hover:text-white">
+                        <Link to='/account' className="mr-4 hover:underline hover:text-white">
                             <h4>Account</h4>
                         </Link>                
                             <button onClick={handleLogOut} className='bg-[#1f80e0] px-5 py-1 rounded text-white font-bold hover:bg-white hover:text-black'>LogOut</button>
@@ -82,8 +82,8 @@ function Navbar() {
                     <h4>Movies</h4>
                 </Link>
                 {user?.email ?
-                    <Link to='/login' className="flex-col">
-                    <AiOutlineUser className='ml-[12px]'/>
+                    <Link to='/account' className="flex-col">
+                    <AiOutlineUser className='ml-[20px]'/>
                     <h4>Account</h4>
                 </Link> : 
                 <Link to='/login' className="flex-col">
