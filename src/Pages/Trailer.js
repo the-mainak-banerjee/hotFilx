@@ -50,8 +50,8 @@ function Trailer() {
                 <YouTube videoId={trailerUrl} opts={opts} />
                  <div className='w-[90%] md:px-16'>
                     <h2 className='font-bold text-2xl pl-4 pt-4 '>{showDetails?.title || showDetails?.original_title || params.showTitle}</h2>
-                    {showDetails && <p className='pl-4 pt-0 text-gray-500'>Released: {showDetails?.release_date}</p>}
-                    {showDetails && <p className='mb-5 md:mb-10 pl-4 py-2'>{showOverview ? showDetails?.overview : showDetails?.overview.slice(0,125) + "..."}<span onClick={handleOverview} className='text-red-500 underline cursor-pointer'>{showOverview ? '[Hide More]' : '[Show More]'}</span></p>}
+                    {showDetails && <p className='pl-4 pt-0 text-gray-500'>Release Date: {showDetails?.release_date}</p>}
+                    {showDetails && <p className='mb-5 md:mb-10 pl-4 py-2'>{showOverview ? showDetails?.overview : showDetails?.overview.slice(0,125) + "..."}<span onClick={handleOverview} className='text-[#0c549c] underline cursor-pointer hover:font-bold hover:text-[#1f80e0]'>{showOverview ? '[Hide More]' : '[Show More]'}</span></p>}
                 </div>
                 <hr />
             </div>

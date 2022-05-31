@@ -42,7 +42,7 @@ export default function Hero({ apiUrl }) {
       </div>
       <div className='absolute w-full top-[20%] p-5 md:p-16'>
           <h1 className='font-bold text-2xl'>{movies?.title || movies?.original_title || movies?.original_name}</h1>
-          <p className='text-[#a1a1a1]'>Released {movies?.release_date || movies?.first_air_date} : Language {movies?.original_language}</p>
+          <p className='text-[#a1a1a1]'>Release Date {movies?.release_date || movies?.first_air_date} : Language {movies?.original_language}</p>
           <div className='my-4'>
                 <button onClick={handlePlay} className="mr-2 bg-white px-6 py-1 rounded text-black font-bold hover:bg-[#1f80e0] hover:text-white">
                     Play

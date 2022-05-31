@@ -66,7 +66,7 @@ function Shows( {shows}) {
           </h2>
           <p 
             className='text-gray-100 text-[10px] md:text-xs'>
-            {shows?.first_air_date ? `First Aired: ${shows?.first_air_date}` : `Released: ${shows?.release_date}`}
+            {shows?.first_air_date ? `First Aired: ${shows?.first_air_date}` : `Release Date: ${shows?.release_date}`}
           </p>
           <p 
             className='text-[10px]'>
