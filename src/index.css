@@ -6,7 +6,7 @@
 }
 
 .nav-link{
-    @apply mr-4 hover:underline hover:text-white;
+    @apply mr-10 hover:underline hover:text-white;
 }
 
 @tailwind utilities;

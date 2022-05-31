@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { AiOutlineSearch, AiOutlineHome, AiOutlineUser } from 'react-icons/ai'
+import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai'
 import { MdPersonalVideo, MdOutlineMovie } from 'react-icons/md'
+import { FaRegUserCircle } from 'react-icons/fa'
 import { useAuth } from '../Store/auth-context'
 
 function Navbar() {
@@ -24,10 +25,10 @@ function Navbar() {
                 <h2 className="font-semibold text-3xl">HotFlix</h2>
             </Link>
             <div className="flex items-center text-gray-300">
-                <div className='mr-4'>
+                {/* <div className='mr-4'>
                     <input type="search" placeholder='Search' autoComplete="off" className="bg-inherit border-0 border-b-2 pl-1 focus:w-[250px]"/>
                     <AiOutlineSearch className="absolute top-7 right-[345px]"/>
-                </div>
+                </div> */}
                 <NavLink to='/tv' className={(navData) => navData.isActive ? 'underline text-white nav-link' : 'nav-link'}>
                     <h4>TV</h4>
                 </NavLink>
@@ -36,10 +37,12 @@ function Navbar() {
                 </NavLink>
                 {user?.email ? (
                     <div className='flex items-center'>
-                        <NavLink to='/account' className={(navData) => navData.isActive ? 'underline text-white nav-link' : 'nav-link'}>
+                        <h4 onClick={handleLogOut} className='nav-link cursor-pointer'>LogOut</h4>
+                        <NavLink to='/account' className={(navData) => navData.isActive ? 'underline text-[16px] font-bold nav-link flex items-center' : 'nav-link text-[16px] font-bold flex items-center'}>
+                            <FaRegUserCircle size='1.2rem' className='mr-1'/>
                             <h4>Account</h4>
                         </NavLink>                
-                            <button onClick={handleLogOut} className='nav-btn'>LogOut</button>
+                            {/* <button onClick={handleLogOut} className='nav-btn'>LogOut</button> */}
                     </div>
                 ) : 
                 (
@@ -70,7 +73,7 @@ function Navbar() {
                         </button>
                     </NavLink>}
                 </div>
-                <AiOutlineSearch />
+                {/* <AiOutlineSearch /> */}
             </div>
             <div className='bg-[#0C111B] text-white flex items-center justify-center z-50 pt-1 fixed bottom-[1px] w-[100%]'>
                 <NavLink to='/home' className="mr-12 flex-col">
