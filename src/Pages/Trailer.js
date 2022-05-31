@@ -13,8 +13,15 @@ function Trailer() {
     const [showOverview, setShowOverview] = useState(false)
     const params = useParams()
     const apiUrl = requests.moviesDetails(params.showId)
+    const opts = {
+        height: '500',
+        width: '100%',
+        playerVars: {
+            autoplay: 1
+        }
+    };
     
-
+    
     useEffect(() => {
         function fetchMovie(){
             axios.get(apiUrl).then((res) => {
@@ -23,15 +30,8 @@ function Trailer() {
         }
         fetchMovie()
     },[apiUrl])
-
-    const opts = {
-        height: '500',
-        width: '100%',
-        playerVars: {
-            autoplay: 1
-        }
-    };
-
+    
+    
     movieTrailer(showDetails?.original_title || "").then((url) => {
         const urlParams = new URLSearchParams(new URL(url).search)
         setTrailerUrl(urlParams.get('v'))

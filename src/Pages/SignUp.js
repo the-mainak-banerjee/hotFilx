@@ -10,6 +10,7 @@ function SignUp() {
     const [err,setErr] = useState('')
     const navigate = useNavigate()
     const { signUp } = useAuth()
+    const backgroundImage = 'https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bcae-07a3f8dc141a/f6d7434e-d6de-4185-a6d4-c77a2d08737b/US-en-20220502-popsignuptwoweeks-perspective_alpha_website_medium.jpg'
     
 
     async function handleSignUp(event) {
@@ -33,7 +34,6 @@ function SignUp() {
     
 
     
-    let backgroundImage = 'https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bcae-07a3f8dc141a/f6d7434e-d6de-4185-a6d4-c77a2d08737b/US-en-20220502-popsignuptwoweeks-perspective_alpha_website_medium.jpg'
 
 
     return(
