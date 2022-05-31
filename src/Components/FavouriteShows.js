@@ -3,12 +3,14 @@ import { useAuth } from '../Store/auth-context'
 import { db } from '../Resources/Firebase'
 import { doc, onSnapshot, updateDoc } from 'firebase/firestore'
 import { AiFillLeftCircle, AiFillRightCircle, AiOutlineClose } from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom'
 
 
 
 function FavouriteShows() {
     const [shows,setShows] = useState([])
     const { user } = useAuth()
+    const navigate = useNavigate()
 
     function slideLeft(){
         let slider = document.getElementById('slider')
@@ -40,6 +42,9 @@ function FavouriteShows() {
         }
     }
 
+    function showTrailer(item) {
+        navigate(`/home/${item?.title}/${item?.id}`)
+    }
 
     const displayShowsCard = shows.map(item=> {
         return (
@@ -53,10 +58,18 @@ function FavouriteShows() {
                     alt={item?.title}
                 />
                 <div className='absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 text-white whitespace-normal'>
-                <p className='white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center'>
-                  {item?.title}
-                </p>
-                <p onClick={() => deleteShow(item.id)} className='absolute text-gray-300 top-4 right-4'><AiOutlineClose /></p>
+                    <div className='flex justify-center items-center flex-col h-full'>
+                        <p className='white-space-normal text-xs md:text-sm font-bold text-center'>
+                        {item?.title}
+                        </p>
+                        <h4 
+                            onClick={() => showTrailer(item)}
+                            className='font-bold text-gray-300 sm:text-[10px] md:text-[15px] hover:bg-slate-500 py-1 px-3 lg:mt-2 rounded-md'>
+                            Watch Trailer
+                        </h4>
+
+                    </div>
+                    <p onClick={() => deleteShow(item.id)} className='absolute text-gray-300 top-4 right-4'><AiOutlineClose /></p>
               </div>
             </div>
         )

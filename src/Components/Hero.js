@@ -1,11 +1,13 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 // import requests from '../Resources/Requests'
 
 export default function Hero({ apiUrl }) {
 
     const [movies, setMovies] = useState([]) 
-    const [fullOverview, setFullOverview] = useState(false)   
+    const [fullOverview, setFullOverview] = useState(false)
+    const navigate = useNavigate()   
     
     useEffect(()=>{
         function fetchMovie(){
@@ -27,6 +29,10 @@ export default function Hero({ apiUrl }) {
     function handleFullOverview() {
         setFullOverview(prevState => !prevState)
     }
+
+    function handlePlay(){
+        navigate(`/home/${movies?.original_title || movies?.original_name}/${movies?.id}`)
+    }
     
   return (
     <section className='text-white w-full h-[600px] relative'>
@@ -38,8 +44,12 @@ export default function Hero({ apiUrl }) {
           <h1 className='font-bold text-2xl'>{movies?.title || movies?.original_title || movies?.original_name}</h1>
           <p className='text-[#a1a1a1]'>Released {movies?.release_date || movies?.first_air_date} : Language {movies?.original_language}</p>
           <div className='my-4'>
-              <button className="mr-2 bg-white px-6 py-1 rounded text-black font-bold hover:bg-[#1f80e0] hover:text-white">Play</button>
-              <button className=" px-6 py-1 rounded text-white font-bold border-[1px] hover:bg-[#1f80e0] hover:border-black">Watch Later</button>
+                <button onClick={handlePlay} className="mr-2 bg-white px-6 py-1 rounded text-black font-bold hover:bg-[#1f80e0] hover:text-white">
+                    Play
+                </button>
+                <button className=" px-6 py-1 rounded text-white font-bold border-[1px] hover:bg-[#1f80e0] hover:border-black">
+                    Watch Later
+                </button>
           </div>
           <div className='max-w-[80%] sm:max-w-[60%]'>
               {movies?.overview &&  <p>{fullOverview ? movies?.overview : trunscateString(movies?.overview,150)}<span className='text-gray-300 underline cursor-pointer' onClick={handleFullOverview}>{fullOverview ? '[Hide Extra]' : '[Show More]'}</span></p>}

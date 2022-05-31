@@ -37,7 +37,7 @@ function List( {title,apiUrl, rowId}) {
     })
 
   return (
-    <section className='text-white p-5 md:px-16 md:pt-16'>
+    <section className='text-white py-5 md:px-16 md:pt-16'>
         <h2 className='font-bold text-2xl mb-5 pl-4'>{title}</h2>
         <div className='relative flex items-center group'>
         <AiFillLeftCircle 
