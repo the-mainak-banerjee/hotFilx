@@ -5,6 +5,7 @@ import Navbar from '../../Components/UI/Navbar'
 import requests from '../../utils/Requests'
 
 function Home() {
+  
   return (
     <>
      <Navbar/>

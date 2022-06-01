@@ -8,17 +8,22 @@ const useFirestoreData = (userEmail) => {
     const showId = doc(db, "users", `${userEmail}`)
 
     async function saveShow (shows){
-          if(userEmail){
-            await updateDoc(showId, {
-              savedShows: arrayUnion({
-                id: shows.id,
-                title: shows?.title || shows?.name,
-                image: shows?.poster_path
+          try{
+            if(userEmail){
+              await updateDoc(showId, {
+                savedShows: arrayUnion({
+                  id: shows.id,
+                  title: shows?.title || shows?.name,
+                  image: shows?.poster_path
+                })
               })
-            })
-          }
-          else {
-            alert("Please Login To Save Shows")
+            }
+            else {
+              alert("Please Login To Save Shows")
+            }
+          }catch(error){
+            alert(error.message) 
+
           }
         }
 
@@ -36,7 +41,7 @@ const useFirestoreData = (userEmail) => {
                   savedShows: newShowList
               })
           }catch(error){
-              alert(error)
+              alert(error.message)
           }
       }
 

@@ -18,8 +18,9 @@ import Loading from './Components/UI/Loading'
 const Trailer = React.lazy(() => import('./Pages/Main/Trailer'))
 const Account = React.lazy(() => import('./Pages/Account/Account'))
 const ChangePassword = React.lazy (() => import('./Pages/Account/ChangePassword'))
-const ForgotPassword = React.lazy(() => import('./Pages/User/ForgotPassword'))
+const ForgotPassword = React.lazy(() => import('./Pages/Account/ForgotPassword'))
 const DeleteAccount = React.lazy(() => import('./Pages/Account/DeleteAccount'))
+const NotFound = React.lazy(() => import('./Pages/Fallback/NotFound'))
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
             <Route path='/account' element={user?.email ? <Account /> : <Navigate replace to='/login'/>}/>
             <Route path='/account/change_password' element={user?.email ? <ChangePassword /> : <Navigate replace to='/login'/>}/>
             <Route path='/account/delete_account' element={user?.email ? <DeleteAccount /> : <Navigate replace to='/login'/>}/>
+            <Route path='/*' element={<NotFound/>}/>
           </Routes>
         </Suspense>
     </>

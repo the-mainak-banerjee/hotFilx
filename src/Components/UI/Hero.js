@@ -5,7 +5,7 @@ import { useAuth } from '../../Store/auth-context'
 import useFirestoreData from '../../Hooks/useFirestoreData'
 
 
-export default function Hero({ apiUrl }) {
+ function Hero({ apiUrl }) {
 
     const [movie, setMovie] = useState([]) 
     const [fullOverview, setFullOverview] = useState(false)
@@ -44,7 +44,7 @@ export default function Hero({ apiUrl }) {
         saveShow(movie)
         setTimeout(() => {
             fetchMovie()
-        },4000)
+        },3000)
     }
 
     function handleRemoveFromWatchList() {
@@ -80,3 +80,6 @@ export default function Hero({ apiUrl }) {
     </section>
   )
 }
+
+
+export default Hero

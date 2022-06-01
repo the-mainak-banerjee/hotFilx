@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Shows from '../Shows/Shows'
-// import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
 import { AiFillLeftCircle, AiFillRightCircle } from 'react-icons/ai'
 import axios from 'axios'
-// import requests from '../Resources/Requests'
+
 
 function List( {title,apiUrl, rowId}) {
     const [movies, setMovies] = useState([])
+    
 
     useEffect(() => {
         function fetchMovie(){
@@ -31,10 +31,12 @@ function List( {title,apiUrl, rowId}) {
         return(
             <Shows 
                 key={item.id}
-                shows={item}
+                show={item}
             />
         )
     })
+
+    console.log('List')
 
   return (
     <section className='text-white py-5 md:px-16 md:pt-16'>

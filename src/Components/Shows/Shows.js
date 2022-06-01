@@ -1,53 +1,20 @@
 import { useAuth } from '../../Store/auth-context'
 import { useNavigate } from 'react-router-dom'
 import useFirestoreData from '../../Hooks/useFirestoreData'
+import React from 'react';
 
-function Shows( {shows}) {
-  // const [movies,setMovies] = useState([])
+function Shows( {show}) {
   const { user } = useAuth();
   const navigate = useNavigate()
 
   const {programs, saveShow, deleteShow} = useFirestoreData(user?.email)
-
-  // const showId = doc(db, 'users', `${user?.email}`)
-
-  // async function saveShow (){
-  //   if(user?.email){
-  //     await updateDoc(showId, {
-  //       savedShows: arrayUnion({
-  //         id: shows.id,
-  //         title: shows?.title || shows?.name,
-  //         image: shows?.poster_path
-  //       })
-  //     })
-  //   }
-  //   else {
-  //     alert("Please Login To Save Shows")
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   onSnapshot(doc(db, 'users', `${user?.email}`), (doc) => {
-  //       setMovies(doc.data()?.savedShows)
-  //   })
-  // },[user?.email])
-
-
-  // async function deleteShow(passesId) {
-  //     try{
-  //         const newShowList = movies.filter(item => item.id !== passesId)
-  //         await updateDoc(showId, {
-  //             savedShows: newShowList
-  //         })
-  //     }catch(error){
-  //         alert(error)
-  //     }
-  // }
   
 
   function showTrailer() {
-      navigate(`/home/${shows?.title || shows?.original_name}/${shows?.id}`)
+      navigate(`/home/${show?.title || show?.original_name}/${show?.id}`)
   }
+
+  console.log('Show')
 
   return (
     <div 
@@ -55,26 +22,26 @@ function Shows( {shows}) {
     >
       <img 
         className='w-full h-auto block rounded-md' 
-        src={`https://image.tmdb.org/t/p/w500/${shows?.poster_path}`} 
-        alt={shows?.title || shows?.name}
+        src={`https://image.tmdb.org/t/p/w500/${show?.poster_path}`} 
+        alt={show?.title || show?.name}
       />
       <div 
         className='absolute top-0 left-0 w-full h-full flex items-start justify-center pl-2 flex-col opacity-0 hover:opacity-100 hover:bg-black/80 whitespace-normal'>
           <h2 
             className='font-bold text-xl md:text-2xl pt-20'>
-            {shows?.title || shows?.original_title || shows?.original_name}
+            {show?.title || show?.original_title || show?.original_name}
           </h2>
           <p 
             className='text-gray-100 text-[10px] md:text-xs'>
-            {shows?.first_air_date ? `First Aired: ${shows?.first_air_date}` : `Release Date: ${shows?.release_date}`}
+            {show?.first_air_date ? `First Aired: ${show?.first_air_date}` : `Release Date: ${show?.release_date}`}
           </p>
           <p 
             className='text-[10px]'>
-            {shows?.overview.slice(0,100) + "..."}
+            {show?.overview.slice(0,100) + "..."}
           </p>
-          <h4 onClick={programs?.some(e=> e.id===shows.id) ? () => deleteShow(shows?.id) : () => saveShow(shows)}
+          <h4 onClick={programs?.some(e=> e.id===show.id) ? () => deleteShow(show?.id) : () => saveShow(show)}
             className='font-bold text-gray-300 sm:text-[10px] md:text-[15px] self-center hover:bg-slate-500 py-1 px-3 lg:mt-2 rounded-md'>
-            {programs?.some(e=> e.id===shows.id) ? 'Remove From WatchList' : 'Add To WatchList'}
+            {programs?.some(e=> e.id===show.id) ? 'Remove From WatchList' : 'Add To WatchList'}
          </h4>
           <h4 
             onClick={showTrailer}
@@ -87,5 +54,6 @@ function Shows( {shows}) {
 }
 
 export default Shows
+
 
 
