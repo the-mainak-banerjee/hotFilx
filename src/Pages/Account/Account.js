@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import FavouriteShows from '../../Components/Shows/FavouriteShows'
+import Footer from '../../Components/UI/Footer'
 import Navbar from '../../Components/UI/Navbar'
 import { useAuth } from '../../Store/auth-context'
 
@@ -22,6 +23,7 @@ function Account() {
             </div>
           </div>
       </section>
+      <Footer />
     </>
   )
 }

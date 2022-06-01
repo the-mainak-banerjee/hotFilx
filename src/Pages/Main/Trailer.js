@@ -7,6 +7,7 @@ import Navbar from '../../Components/UI/Navbar'
 import requests from '../../utils/Requests'
 import movieTrailer from 'movie-trailer'
 
+
 function Trailer() {
     const [showDetails, setShowDetails] = useState()
     const [trailerId,setTrailerId] = useState("")
@@ -64,7 +65,7 @@ function Trailer() {
                 </div>
                 <hr />
             </div>
-      </section>    
+      </section>  
     </>
   )
 }

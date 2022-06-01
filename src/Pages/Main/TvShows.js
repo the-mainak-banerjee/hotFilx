@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../../Components/UI/Footer'
 import Hero from '../../Components/UI/Hero'
 import List from '../../Components/UI/List'
 import Navbar from '../../Components/UI/Navbar'
@@ -26,6 +27,7 @@ function TvShows() {
             title={'Top Rated TV Shows'}
             apiUrl={requests.topRatedTVShows}
         />
+        <Footer />
     </>
   )
 }
