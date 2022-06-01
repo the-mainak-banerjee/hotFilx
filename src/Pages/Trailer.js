@@ -9,7 +9,7 @@ import movieTrailer from 'movie-trailer'
 
 function Trailer() {
     const [showDetails, setShowDetails] = useState()
-    const [trailerUrl,setTrailerUrl] = useState("")
+    const [trailerId,setTrailerId] = useState("")
     const [showOverview, setShowOverview] = useState(false)
     const params = useParams()
     const apiUrl = requests.moviesDetails(params.showId)
@@ -21,23 +21,23 @@ function Trailer() {
         }
     };
 
-    let showTitle
-    
+    let showTitle 
     
     useEffect(() => {
         function fetchMovie(){
             axios.get(apiUrl).then((res) => {
                 setShowDetails(res.data)
-            })
+            }).catch((error) => {
+                console.log(error)
+            })            
         }
         fetchMovie()
     },[apiUrl])
     
-    // console.log(showDetails)
     
-    movieTrailer(showDetails?.original_title || "").then((url) => {
+    movieTrailer(params.showTitle || '').then((url) => {
         const urlParams = new URLSearchParams(new URL(url).search)
-        setTrailerUrl(urlParams.get('v'))
+        setTrailerId(urlParams.get('v'))
     }).catch(() => console.log("Temporary Unavailable"))
 
 
@@ -46,7 +46,7 @@ function Trailer() {
     }
 
     if(showDetails?.title === showDetails?.original_title){
-        showTitle = showDetails?.title
+        showTitle = showDetails?.title || showDetails?.original_title
     }else{
         showTitle = `${showDetails?.title} (${showDetails?.original_title})`
     }
@@ -56,25 +56,15 @@ function Trailer() {
       <Navbar />
       <section className='text-white w-full h-[400px] mb-10'>
             <div className='w-full h-full'>
-                <YouTube videoId={trailerUrl} opts={opts} />
+                <YouTube videoId={trailerId} opts={opts} />
                  <div className='w-[90%] h-full md:px-16'>
-                    <h2 className='font-bold text-2xl pl-4 pt-4 '>{showTitle || showDetails?.original_title || params.showTitle}</h2>
-                    {showDetails && <p className='pl-4 pt-0 text-gray-500'>Release Date: {showDetails?.release_date}</p>}
-                    {showDetails && <p className='mb-5 md:mb-10 pl-4 py-2'>{showOverview ? showDetails?.overview : showDetails?.overview.slice(0,125) + "..."}<span onClick={handleOverview} className='text-[#0c549c] underline cursor-pointer hover:font-bold hover:text-[#1f80e0]'>{showOverview ? '[Hide More]' : '[Show More]'}</span></p>}
+                    <h2 className='font-bold text-2xl pl-4 pt-4 '>{showDetails?.original_title === params.showTitle ? showTitle : params.showTitle}</h2>
+                    {showDetails?.original_title === params.showTitle && <p className='pl-4 pt-0 text-gray-500'>Release Date: {showDetails?.release_date}</p>}
+                    {showDetails?.original_title === params.showTitle && <p className='mb-5 md:mb-10 pl-4 py-2'>{showOverview ? showDetails?.overview +'   ' : showDetails?.overview.slice(0,125) + "...   "}<span onClick={handleOverview} className='text-[#0c549c] underline cursor-pointer hover:font-bold hover:text-[#1f80e0]'>{showOverview ? '[Hide More]' : '[Show More]'}</span></p>}
                 </div>
                 <hr />
             </div>
-      </section>
-      
-      {/* <div className='mt-[350px] pt-10 md:mt-20 md:pt-10'>
-        <List
-            rowId='1'
-            title={'Trending Movies'}
-            apiUrl={requests.trendingMovies}
-        />
-          
-      </div> */}
-    
+      </section>    
     </>
   )
 }
