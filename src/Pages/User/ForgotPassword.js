@@ -12,7 +12,7 @@ function LogIn() {
     const backgroundImage = 'https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bcae-07a3f8dc141a/f6d7434e-d6de-4185-a6d4-c77a2d08737b/US-en-20220502-popsignuptwoweeks-perspective_alpha_website_medium.jpg'
 
 
-    async function handleLogin(event) {
+    async function handleForgotPassword(event) {
         event.preventDefault()
 
         try{
@@ -40,8 +40,8 @@ function LogIn() {
                 <Link to='/home'>
                     <h2 className="font-semibold text-3xl">HotFlix</h2>
                 </Link>
-                <Link to='/signup'>
-                    <h3 className='text-gray-300 text-xl mr-4 hover:underline hover:text-white'>SignUp</h3>
+                <Link to='/login'>
+                    <h3 className='text-gray-300 text-xl mr-4 hover:underline hover:text-white'>LogIn</h3>
                 </Link>
             </nav>
             <div className='fixed w-full px-4 py-24 z-50'>
@@ -52,7 +52,7 @@ function LogIn() {
                         </h1>
                         <p className='text-[12px] text-gray-500'>We will send you an email with reset password Link</p>
                         {message && <div className='w-full flex flex-col py-4'><p className='bg-gray-500 p-1 mt-1'>{message}</p></div>}
-                        {!message && <form onSubmit={handleLogin} className='w-full flex flex-col py-4'>
+                        {!message && <form onSubmit={handleForgotPassword} className='w-full flex flex-col py-4'>
                             {err && <p className='bg-red-500 p-1 mt-1'>{err}</p>}
                             <input
                                 className='p-3 my-2 bg-gray-700 rounded'

@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Account from "./Pages/Account";
+import Account from "./Pages/Account/Account";
+import ChangePassword from "./Pages/Account/ChangePassword";
 import Home from './Pages/Home'
 import LogIn from "./Pages/User/LogIn";
 import SignUp from "./Pages/User/SignUp";
@@ -25,6 +26,7 @@ function App() {
           <Route path='/login' element={user?.email ? <Navigate replace to='/home'/> : <LogIn/>}/>
           <Route path='/forgot_password' element={user?.email ? <Navigate replace to='/home'/> : <ForgotPassword/>}/>
           <Route path='/account' element={user?.email ? <Account /> : <Navigate replace to='/login'/>}/>
+          <Route path='/account/change_password' element={user?.email ? <ChangePassword /> : <Navigate replace to='/login'/>}/>
         </Routes>
     </>
   );
