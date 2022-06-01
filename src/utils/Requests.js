@@ -1,4 +1,6 @@
-export const key = process.env.REACT_APP_TMDB_API_KEY
+const key = process.env.REACT_APP_TMDB_API_KEY
+
+
 const requests = {
     popularMovies: `https://api.themoviedb.org/3/movie/popular?api_key=${key}&language=en-US&page=1`,
     topRatedMovies: `https://api.themoviedb.org/3/movie/top_rated?api_key=${key}&language=en-US&page=1`,
@@ -11,5 +13,6 @@ const requests = {
         return `https://api.themoviedb.org/3/movie/${movieId}?api_key=${key}&language=en-US`
     }
 }
+
 
 export default requests;

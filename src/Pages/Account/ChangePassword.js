@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import Navbar from '../../Components/Navbar'
 import { useAuth } from '../../Store/auth-context'
 
-function LogIn() {
+function ChangePassword() {
 
     const passwordRef = useRef()
     const [err, setErr] = useState('')
@@ -26,8 +26,7 @@ function LogIn() {
                 navigate('/account')
             },4000)
         }catch(error){
-            setErr(error.message)
-            console.log(error)
+            setErr('Please Login Again To Change Your Password')
         }
         setLoading(false)
     }
@@ -74,4 +73,4 @@ function LogIn() {
     )
 }
 
-export default LogIn
+export default ChangePassword
