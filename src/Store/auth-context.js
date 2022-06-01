@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
-import { auth, db } from '../Resources/Firebase'
+import { auth, db } from '../utils/Firebase'
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, sendPasswordResetEmail, updatePassword } from 'firebase/auth'
 import { doc, setDoc } from 'firebase/firestore' 
 

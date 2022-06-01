@@ -45,9 +45,10 @@ function LogIn() {
             <div className='fixed w-full px-4 py-24 z-50'>
                 <div className='max-w-[450px] h-[400px] mx-auto bg-black/75 text-white'>
                     <div className='max-w-[320px] mx-auto py-16'>   
-                        <h1 className='text-xl font-bold'>
-                            Enter Your New Password
+                        <h1 className='text-3xl font-bold'>
+                            Change Password
                         </h1>
+                        <p className='text-xl text-gray-500'>Enter Your New Password Below</p>
                         {message && <div className='w-full flex flex-col py-4'><p className='bg-gray-500 p-1 mt-1'>{message}</p></div>}
                         {!message && <form onSubmit={handlePasswordChange} className='w-full flex flex-col py-4'>
                             {err && <p className='bg-red-500 p-1 mt-1'>{err}</p>}

@@ -11,12 +11,6 @@ function Account() {
     <>
       <Navbar/>
       <section className='w-full h-full'>
-          {/* <img 
-                className='block absolute w-full h-full object-cover'
-                src='https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bcae-07a3f8dc141a/f6d7434e-d6de-4185-a6d4-c77a2d08737b/US-en-20220502-popsignuptwoweeks-perspective_alpha_website_medium.jpg'
-                alt='netflix-bg'
-          />
-          <div className='bg-gradient-to-t from-[#0c111b] to-[#0c111ba1] fixed bottom-0 w-full h-full'></div> */}
           <FavouriteShows />
           <div className='text-white px-5 pt-1 md:px-16 md:pt-5 mb-20 h-[40%]'>
             <h2 className='font-bold text-3xl md:mb-5 md:mt-0 md:pl-4 relative mt-20 pl-4 bg-[#1f80e0] py-2'>Account Details</h2>

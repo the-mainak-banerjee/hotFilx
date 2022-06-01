@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import YouTube from 'react-youtube'
 // import List from '../Components/List'
 import Navbar from '../Components/Navbar'
-import requests from '../Resources/Requests'
+import requests from '../utils/Requests'
 import movieTrailer from 'movie-trailer'
 
 function Trailer() {
