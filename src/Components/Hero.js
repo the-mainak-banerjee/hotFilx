@@ -64,11 +64,11 @@ export default function Hero({ apiUrl }) {
                 <button onClick={handlePlay} className="mr-2 bg-white px-6 py-1 rounded text-black font-bold hover:bg-[#1f80e0] hover:text-white">
                     Play
                 </button>
-                {programs.some(item => item.id===movie.id) && <button onClick={handleRemoveFromWatchList} className=" px-6 py-1 rounded text-white font-bold border-[1px] hover:bg-[#1f80e0] hover:border-black">
+                {programs?.some(item => item.id===movie.id) && <button onClick={handleRemoveFromWatchList} className=" px-6 py-1 rounded text-white font-bold border-[1px] hover:bg-[#1f80e0] hover:border-black">
                     Remove From WatchList
                 </button>
                 }
-                {!programs.some(item => item.id===movie.id) && <button onClick={handleWatchLater} className=" px-6 py-1 rounded text-white font-bold border-[1px] hover:bg-[#1f80e0] hover:border-black">
+                {!programs?.some(item => item.id===movie.id) && <button onClick={handleWatchLater} className=" px-6 py-1 rounded text-white font-bold border-[1px] hover:bg-[#1f80e0] hover:border-black">
                     Watch Later
                 </button>
                 }
