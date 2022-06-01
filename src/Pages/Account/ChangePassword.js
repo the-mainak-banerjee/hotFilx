@@ -42,7 +42,7 @@ function ChangePassword() {
             <div className='bg-gradient-to-t from-[#0c111b] to-[#0c111ba1] fixed bottom-0 w-full h-full'></div>
             <Navbar />
             <div className='fixed w-full px-4 py-24 z-50'>
-                <div className='max-w-[450px] h-[400px] mx-auto bg-black/75 text-white'>
+                <div className='max-w-[450px] h-[450px] mx-auto bg-black/75 text-white'>
                     <div className='max-w-[320px] mx-auto py-16'>   
                         <h1 className='text-3xl font-bold'>
                             Change Password
