@@ -21,6 +21,8 @@ function FavouriteShows() {
         let slider = document.getElementById('slider')
         slider.scrollLeft = slider.scrollLeft + 250
     }
+   
+    const showId = doc(db, 'users', `${user?.email}`)
 
     useEffect(() => {
         onSnapshot(doc(db, 'users', `${user?.email}`), (doc) => {
@@ -29,7 +31,6 @@ function FavouriteShows() {
     },[user?.email])
     
 
-    const showId = doc(db, 'users', `${user?.email}`)
 
     async function deleteShow(passesId) {
         try{
