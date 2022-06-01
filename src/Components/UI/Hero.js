@@ -42,9 +42,11 @@ import useFirestoreData from '../../Hooks/useFirestoreData'
 
     function handleWatchLater(){
         saveShow(movie)
-        setTimeout(() => {
-            fetchMovie()
-        },3000)
+        if(user?.email){
+            setTimeout(() => {
+                fetchMovie()
+            },2000)
+        }
     }
 
     function handleRemoveFromWatchList() {
@@ -74,7 +76,7 @@ import useFirestoreData from '../../Hooks/useFirestoreData'
                 }
           </div>
           <div className='max-w-[80%] sm:max-w-[60%]'>
-              {movie?.overview &&  <p>{fullOverview ? movie?.overview : trunscateString(movie?.overview,150)}<span className='text-gray-300 underline cursor-pointer' onClick={handleFullOverview}>{fullOverview ? '[Hide Extra]' : '[Show More]'}</span></p>}
+              {movie?.overview &&  <p>{fullOverview ? movie?.overview : trunscateString(movie?.overview,150)}<span className='text-[#1f80e0] font-bold underline cursor-pointer' onClick={handleFullOverview}>{fullOverview ? '[Hide Extra]' : '[Show More]'}</span></p>}
           </div>
       </div>
     </section>

@@ -23,7 +23,7 @@ function List( {title,apiUrl, rowId}) {
     }
 
     function slideRight(){
-        let slider = document.getElementById('slider'+rowId)
+        let slider = document.getElementById('slider' + rowId)
         slider.scrollLeft = slider.scrollLeft + 250
     }
 

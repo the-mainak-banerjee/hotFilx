@@ -17,7 +17,7 @@ function Account() {
             <div className='relative flex flex-col md:mb-5 md:mt-0 md:pl-4 mt-5 pl-4'>
                 <h4 className='text-xl'>Email Address:-  <span>{user?.email}</span></h4>
                 <h4 className='text-xl'>Account Creation Date:-  <time>{user?.metadata?.creationTime}</time></h4>
-                <Link to='change_password' className='nav-btn bg-red-800 md:max-w-[30%] lg:max-w-[25%] xl:max-w-[15%] text-center mt-5'><button>Change Password</button></Link>
+                <Link to='change_password' className='nav-btn bg-green-600 md:max-w-[30%] lg:max-w-[25%] xl:max-w-[15%] text-center mt-5'><button>Change Password</button></Link>
                 <Link to='delete_account' className='nav-btn bg-red-800 md:max-w-[30%] lg:max-w-[25%] xl:max-w-[15%] text-center mt-5'><button>Delete Account</button></Link>
             </div>
           </div>

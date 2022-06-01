@@ -26,7 +26,7 @@ function ChangePassword() {
                 navigate('/account')
             },4000)
         }catch(error){
-            setErr('Please Login Again To Change Your Password')
+            setErr('Please Logout and Login Again To Change Your Password')
         }
         setLoading(false)
     }

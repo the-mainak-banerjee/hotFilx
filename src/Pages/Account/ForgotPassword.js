@@ -50,7 +50,7 @@ function LogIn() {
                         <h1 className='text-xl font-bold'>
                             Enter Your Registered Email
                         </h1>
-                        <p className='text-[12px] text-gray-500'>We will send you an email with reset password Link</p>
+                        <p className='text-[13px] text-gray-300'>We will send you an email with reset password Link</p>
                         {message && <div className='w-full flex flex-col py-4'><p className='bg-gray-500 p-1 mt-1'>{message}</p></div>}
                         {!message && <form onSubmit={handleForgotPassword} className='w-full flex flex-col py-4'>
                             {err && <p className='bg-red-500 p-1 mt-1'>{err}</p>}

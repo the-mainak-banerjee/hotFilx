@@ -38,7 +38,7 @@ function Navbar() {
                 {user?.email ? (
                     <div className='flex items-center'>
                         <h4 onClick={handleLogOut} className='nav-link cursor-pointer'>LogOut</h4>
-                        <NavLink to='/account' className={(navData) => navData.isActive ? 'underline text-[16px] font-bold nav-link flex items-center' : 'nav-link text-[16px] font-bold flex items-center'}>
+                        <NavLink to='/account' className={(navData) => navData.isActive ? 'underline text-[16px] text-white font-bold nav-link flex items-center' : 'nav-link text-[16px] font-bold flex items-center'}>
                             <FaRegUserCircle size='1.2rem' className='mr-1'/>
                             <h4>Account</h4>
                         </NavLink>                
