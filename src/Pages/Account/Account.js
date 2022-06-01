@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import FavouriteShows from '../../Components/FavouriteShows'
-import Navbar from '../../Components/Navbar'
+import FavouriteShows from '../../Components/Shows/FavouriteShows'
+import Navbar from '../../Components/UI/Navbar'
 import { useAuth } from '../../Store/auth-context'
 
 function Account() {

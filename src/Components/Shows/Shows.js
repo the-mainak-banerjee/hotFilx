@@ -1,6 +1,6 @@
-import { useAuth } from '../Store/auth-context'
+import { useAuth } from '../../Store/auth-context'
 import { useNavigate } from 'react-router-dom'
-import useFirestoreData from '../Hooks/useFirestoreData'
+import useFirestoreData from '../../Hooks/useFirestoreData'
 
 function Shows( {shows}) {
   // const [movies,setMovies] = useState([])

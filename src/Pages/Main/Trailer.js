@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import YouTube from 'react-youtube'
 // import List from '../Components/List'
-import Navbar from '../Components/Navbar'
-import requests from '../utils/Requests'
+import Navbar from '../../Components/UI/Navbar'
+import requests from '../../utils/Requests'
 import movieTrailer from 'movie-trailer'
 
 function Trailer() {

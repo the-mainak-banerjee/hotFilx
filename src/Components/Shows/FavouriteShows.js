@@ -1,10 +1,10 @@
 import React from 'react'
-import { useAuth } from '../Store/auth-context'
+import { useAuth } from '../../Store/auth-context'
 // import { db } from '../utils/Firebase'
 // import { doc, onSnapshot, updateDoc } from 'firebase/firestore'
 import { AiFillLeftCircle, AiFillRightCircle, AiOutlineClose } from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom'
-import useFirestoreData from '../Hooks/useFirestoreData'
+import useFirestoreData from '../../Hooks/useFirestoreData'
 
 
 

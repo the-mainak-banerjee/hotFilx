@@ -1,8 +1,8 @@
 import React from 'react'
-import Hero from '../Components/Hero'
-import List from '../Components/List'
-import Navbar from '../Components/Navbar'
-import requests from '../utils/Requests'
+import Hero from '../../Components/UI/Hero'
+import List from '../../Components/UI/List'
+import Navbar from '../../Components/UI/Navbar'
+import requests from '../../utils/Requests'
 
 function TvShows() {
   return (

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Shows from './Shows'
+import Shows from '../Shows/Shows'
 // import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
 import { AiFillLeftCircle, AiFillRightCircle } from 'react-icons/ai'
 import axios from 'axios'

@@ -3,7 +3,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai'
 import { MdPersonalVideo, MdOutlineMovie } from 'react-icons/md'
 import { FaRegUserCircle } from 'react-icons/fa'
-import { useAuth } from '../Store/auth-context'
+import { useAuth } from '../../Store/auth-context'
 
 function Navbar() {
     const navigate = useNavigate()

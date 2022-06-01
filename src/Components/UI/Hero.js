@@ -1,8 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../Store/auth-context'
-import useFirestoreData from '../Hooks/useFirestoreData'
+import { useAuth } from '../../Store/auth-context'
+import useFirestoreData from '../../Hooks/useFirestoreData'
 
 
 export default function Hero({ apiUrl }) {
