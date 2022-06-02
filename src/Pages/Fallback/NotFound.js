@@ -15,9 +15,15 @@ function NotFound() {
       <Navbar />
       <section className='absolute text-white w-full h-full'>
           <div className='flex flex-col items-center w-full h-full justify-center p-6'>
-              <h2 className='text-red-500 text-4xl font-extrabold text-center'>404</h2>
-              <p className='text-gray-300 text-2xl text-center'>Oops!!! You Are At The <span className='text-red-500 font-bold'>Wrong Counter.</span></p>
-              <p className='text-gray-400 text-center'>Use Any Link Above To Enjoy Movies With <span className='text-[#1f80e0] font-extrabold'>Popcorn</span> & <span className='text-[#1f80e0] font-extrabold'>Coke.</span></p>
+              <h2 className='text-red-500 text-4xl font-extrabold text-center'>
+                404
+              </h2>
+              <p className='text-gray-300 text-2xl text-center'>
+                Oops!!! You Are At The <span className='text-red-500 font-bold'>Wrong Counter.</span>
+              </p>
+              <p className='text-gray-400 text-center'>
+                Use Any Link Above To Enjoy Movies With <span className='text-[#1f80e0] font-extrabold'>Popcorn</span> & <span className='text-[#1f80e0] font-extrabold'>Coke.</span>
+              </p>
           </div>
       </section>
     </section>

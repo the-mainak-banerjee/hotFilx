@@ -9,7 +9,6 @@ function DeleteAccount() {
     const { deleteAccount } = useAuth()
     const backgroundImage = 'https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bcae-07a3f8dc141a/f6d7434e-d6de-4185-a6d4-c77a2d08737b/US-en-20220502-popsignuptwoweeks-perspective_alpha_website_medium.jpg'
 
-
     async function handleDeleteAccount() { 
         try{
             setErr('')
@@ -21,7 +20,6 @@ function DeleteAccount() {
 
         }
     }
-
 
     return(
         <section className='w-full h-screen'>
@@ -38,7 +36,9 @@ function DeleteAccount() {
                         <h1 className='text-3xl font-bold'>
                             Delete Account
                         </h1>
-                        <p className='text-xl text-gray-500'>Are You Sure You Want To Delete Your Account?</p>
+                        <p className='text-xl text-gray-500'>
+                            Are You Sure You Want To Delete Your Account?
+                        </p>
                         <div className='w-full flex flex-col py-4'>
                             <button onClick={handleDeleteAccount} className='bg-[#1f80e0] hover:bg-[#0c549c] py-3 my-6 rounded font-bold'>
                                 Yes, Delete It
@@ -46,7 +46,9 @@ function DeleteAccount() {
                             {err && <p className='bg-red-500 p-1 mt-1'>{err}</p>}
                             <p className='py-4'>
                                 <span className='text-gray-600'>Don't Delete,Get Back To</span>{' '}
-                                <Link to='/account' className='hover:underline'>Account Page</Link>
+                                <Link to='/account' className='hover:underline'>
+                                    Account Page
+                                </Link>
                             </p>
                         </div>
                     </div>

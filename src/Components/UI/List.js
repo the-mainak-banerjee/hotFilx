@@ -7,7 +7,6 @@ import axios from 'axios'
 function List( {title,apiUrl, rowId}) {
     const [movies, setMovies] = useState([])
     
-
     useEffect(() => {
         function fetchMovie(){
             axios.get(apiUrl).then((res) => {
@@ -36,7 +35,6 @@ function List( {title,apiUrl, rowId}) {
         )
     })
 
-    console.log('List')
 
   return (
     <section className='text-white py-5 md:px-16 md:pt-16'>

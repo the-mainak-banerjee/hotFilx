@@ -35,10 +35,14 @@ function LogIn() {
             <div className='bg-gradient-to-t from-[#0c111b] to-[#0c111ba1] fixed bottom-0 w-full h-full'></div>
             <nav className='flex text-white items-center justify-between h-16 py-5 px-5 md:px-16 mt-[4px] z-100 w-full sticky top-0 z-50'>
                 <Link to='/home'>
-                    <h2 className="font-semibold text-3xl">HotFlix</h2>
+                    <h2 className="font-semibold text-3xl">
+                        HotFlix
+                    </h2>
                 </Link>
                 <Link to='/signup'>
-                    <h3 className='text-gray-300 text-xl mr-4 hover:underline hover:text-white'>SignUp</h3>
+                    <h3 className='text-gray-300 text-xl mr-4 hover:underline hover:text-white'>
+                        SignUp
+                    </h3>
                 </Link>
             </nav>
             <div className='fixed w-full px-4 py-24 z-50'>
@@ -48,7 +52,9 @@ function LogIn() {
                             Log In
                         </h1>
                         <form onSubmit={handleLogin} className='w-full flex flex-col py-4'>
-                            {err && <p className='bg-red-500 p-1 mt-1'>{err}</p>}
+                            {err && <p className='bg-red-500 p-1 mt-1'>
+                                {err}
+                            </p>}
                             <input
                                 className='p-3 my-2 bg-gray-700 rounded'
                                 type='email'
@@ -68,11 +74,17 @@ function LogIn() {
                             </button>
                             <div className='flex justify-between items-center text-sm text-gray-600'>
                                 <p></p>
-                                <Link to='/forgot_password' className='hover:underline hover:text-white'>Forgot Password?</Link>
+                                <Link to='/forgot_password' className='hover:underline hover:text-white'>
+                                    Forgot Password?
+                                </Link>
                             </div>
                             <p className='py-8'>
-                                <span className='text-gray-600'>New To HotFlix?</span>{' '}
-                                <Link to='/signup' className='hover:underline'>Sign Up</Link>
+                                <span className='text-gray-600'>
+                                    New To HotFlix?
+                                </span>{' '}
+                                <Link to='/signup' className='hover:underline'>
+                                    Sign Up
+                                </Link>
                             </p>
                         </form>
                     </div>

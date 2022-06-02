@@ -47,10 +47,16 @@ function ChangePassword() {
                         <h1 className='text-3xl font-bold'>
                             Change Password
                         </h1>
-                        <p className='text-xl text-gray-500'>Enter Your New Password Below</p>
-                        {message && <div className='w-full flex flex-col py-4'><p className='bg-gray-500 p-1 mt-1'>{message}</p></div>}
+                        <p className='text-xl text-gray-500'>
+                            Enter Your New Password Below
+                        </p>
+                        {message && <div className='w-full flex flex-col py-4'>
+                            <p className='bg-gray-500 p-1 mt-1'>{message}</p>
+                        </div>}
                         {!message && <form onSubmit={handlePasswordChange} className='w-full flex flex-col py-4'>
-                            {err && <p className='bg-red-500 p-1 mt-1'>{err}</p>}
+                            {err && <p className='bg-red-500 p-1 mt-1'>
+                                {err}
+                            </p>}
                             <input
                                 className='p-3 my-2 bg-gray-700 rounded'
                                 type='password'
@@ -63,7 +69,9 @@ function ChangePassword() {
                             </button>
                             <p className='py-4'>
                                 <span className='text-gray-600'>Get Back To</span>{' '}
-                                <Link to='/account' className='hover:underline'>Account Page</Link>
+                                <Link to='/account' className='hover:underline'>
+                                    Account Page
+                                </Link>
                             </p>
                         </form>}
                     </div>

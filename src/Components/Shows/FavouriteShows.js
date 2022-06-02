@@ -1,16 +1,11 @@
 import React from 'react'
 import { useAuth } from '../../Store/auth-context'
-// import { db } from '../utils/Firebase'
-// import { doc, onSnapshot, updateDoc } from 'firebase/firestore'
 import { AiFillLeftCircle, AiFillRightCircle, AiOutlineClose } from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom'
 import useFirestoreData from '../../Hooks/useFirestoreData'
 
-
-
-
 function FavouriteShows() {
-    // const [shows,setShows] = useState([])
+
     const { user } = useAuth()
     const navigate = useNavigate()
     const {programs, deleteShow} = useFirestoreData(user?.email)
@@ -24,25 +19,6 @@ function FavouriteShows() {
         let slider = document.getElementById('slider')
         slider.scrollLeft = slider.scrollLeft + 250
     }
-   
-    // const showId = doc(db, 'users', `${user?.email}`)
-
-    // useEffect(() => {
-    //     onSnapshot(doc(db, 'users', `${user?.email}`), (doc) => {
-    //         setShows(doc.data()?.savedShows)
-    //     })
-    // },[user?.email])
-
-    // async function deleteShow(passesId) {
-    //     try{
-    //         const newShowList = shows.filter(item => item.id !== passesId)
-    //         await updateDoc(showId, {
-    //             savedShows: newShowList
-    //         })
-    //     }catch(error){
-    //         alert(error)
-    //     }
-    // }
 
     function showTrailer(item) {
         navigate(`/home/${item?.title}/${item?.id}`)
