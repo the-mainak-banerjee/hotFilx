@@ -45,4 +45,21 @@ We use React, Firebase and Tailwind CSS to create this App
 * Movie-Trailer Package
 
 ## Live Version
-* Click Here to Enjoy Some Trailers Of Movies and TV Shows.
+* [Click Here](https://hotflix-d23ce.web.app/home) to Enjoy Some Trailers Of Movies and TV Shows.
+
+## Screens
+
+### `Home Page`
+
+![image](https://user-images.githubusercontent.com/94280354/184877773-c1ce8f6a-6422-45bf-ae6a-d21465246676.png)
+
+
+### `Profile Page`
+
+![image](https://user-images.githubusercontent.com/94280354/184877425-ae6c2e3d-c693-496f-9671-6eb3f9cac418.png)
+
+
+### `Watch Page`
+
+![image](https://user-images.githubusercontent.com/94280354/184877641-0758cc6e-f40d-42cf-9428-356909869e81.png)
+
